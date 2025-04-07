@@ -1,0 +1,122 @@
+* {
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background: #FFFFFF;
+  font-family: "PP Neue Montreal", sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-size: 16px;
+  color: #0A1D27;
+  font-weight: 400;
+}
+
+#app {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: #ecf3ff;
+  font-family: "PP Neue Montreal", sans-serif;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: "PP Neue Montreal", sans-serif;
+}
+
+._container {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: content-box;
+
+  @media (min-width: 1920px) {
+    padding: 0 334px;
+  }
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+  transition: all 0.2s;
+}
+
+//*************************
+//*************************
+//*************************
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@font-face {
+  font-family: 'PP Neue Montreal';
+  font-style: normal;
+  font-weight: normal;
+  src: local('PP Neue Montreal Book'), url('../fonts/ppneuemontreal-book.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'PP Neue Montreal';
+  font-style: normal;
+  font-weight: 500;
+  src: local('PP Neue Montreal Medium'), url('../fonts/ppneuemontreal-medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'PP Neue Montreal';
+  font-style: normal;
+  font-weight: 700;
+  src: local('PP Neue Montreal Bold'), url('../fonts/ppneuemontreal-bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: 600;
+  src: local('PP Neue Montreal Semibold'), url('../fonts/SF-Pro-Display-Semibold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  font-style: normal;
+  font-weight: 700;
+  src: local('SF Pro Display Bold'), url('../fonts/SF-Pro-Display-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Stampatello Faceto';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Stampatello Faceto'), url('../fonts/Stampatello Faceto.woff') format('woff');
+}

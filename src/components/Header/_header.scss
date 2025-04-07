@@ -1,0 +1,66 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  background: #FBFBFAB0;
+  border: 1px solid #FFFFFF;
+  padding: 6px 8px 6px 20px;
+  border-radius: 16px;
+
+  &__logo {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 100%;
+    letter-spacing: -3%;
+    font-family: 'SF Pro Display', sans-serif;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    & a {
+      display: flex;
+      transition: all 0.2s;
+      color: #0A1D27;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 120%;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .header {
+    gap: 16px;
+    padding: 5px 6px 5px 16px;
+    border-radius: 14px;
+
+    &__logo {
+      font-size: 19px;
+    }
+
+    &__nav {
+      gap: 16px;
+
+      & a {
+        font-size: 15px;
+      }
+    }
+
+    &__buttons {
+      gap: 10px;
+    }
+  }
+}

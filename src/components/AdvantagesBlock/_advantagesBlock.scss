@@ -1,0 +1,146 @@
+.advantages-block {
+  background: #F7F9F5;
+  border: 1px solid #F0F0F0;
+  position: relative;
+  border-radius: 32px;
+  overflow: hidden;
+
+  & > img {
+    width: 100%;
+    height: auto;
+    padding-bottom: 80px;
+    object-fit: cover;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 32px;
+    z-index: 2;
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 120%;
+  }
+
+  &__button {
+    width: 44px;
+    height: 44px;
+    background: #FFFFFF;
+    box-shadow: 0 0 2px 0 #0000001F;
+    border-radius: 50%;
+    flex-shrink: 0;
+    cursor: pointer;
+    position: relative;
+
+    & > div {
+      width: 14px;
+      height: 2px;
+      border-radius: 2px;
+      background: #0A1D27;
+      opacity: 0.2;
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%);
+      transition: all 0.3s;
+
+      &:nth-child(1) {
+        transform: translate(-50%) rotate(90deg);
+      }
+    }
+
+    &.open {
+      & > div:nth-child(1) {
+        transform: translate(-50%) rotate(225deg);
+        transition: all 0.5s;
+      }
+
+      & > div:nth-child(2) {
+        transform: translate(-50%) rotate(135deg);
+        transition: all 0.5s;
+      }
+    }
+  }
+
+  &__text {
+    color: #0A1D27CC;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+    position: relative;
+    z-index: 1;
+    max-height: 160px;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+    opacity: 1;
+    overflow: hidden;
+  }
+
+  &__text.collapsed {
+    transition: all 0.3s ease;
+    max-height: 0;
+    opacity: 0;
+  }
+
+  &__gradient {
+    background: radial-gradient(213.62% 58.61% at 50% 54.3%, #F7F9F5 40%, rgba(247, 249, 245, 0) 98.11%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@media (max-width: 1440px) {
+  .advantages-block {
+    border-radius: 28px;
+
+    & > img {
+      padding-bottom: 72px;
+    }
+
+    &__content {
+      gap: 10px;
+      padding: 28px;
+    }
+
+    &__head {
+      gap: 10px;
+    }
+
+    &__title {
+      font-size: 25px;
+    }
+
+    &__button {
+      width: 40px;
+      height: 40px;
+
+      & > div {
+        width: 14px;
+      }
+    }
+
+    &__text {
+      font-size: 18px;
+      max-height: 180px;
+    }
+  }
+}
