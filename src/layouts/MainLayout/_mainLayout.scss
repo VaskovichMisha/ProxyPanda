@@ -778,3 +778,256 @@
     }
   }
 }
+
+//************************
+//************************
+//************************
+
+@media (max-width: 992px) {
+  .main {
+    padding: 16px;
+
+    &__bg {
+      width: 200%;
+    }
+
+    &__hero {
+      height: 800px;
+      padding: 16px 0;
+      border-radius: 24px;
+      margin-bottom: 50px;
+    }
+
+    &__advantages {
+      margin-bottom: 60px;
+    }
+
+    &__how-work {
+      margin-bottom: 60px;
+    }
+
+    &__quality {
+      padding: 40px 0 50px;
+      border-radius: 24px;
+      margin-bottom: 60px;
+    }
+
+    &__tariffs {
+      margin-bottom: 60px;
+    }
+
+    &__questions {
+      margin-bottom: 50px;
+    }
+
+    &__effective {
+      border-radius: 24px;
+      margin-bottom: 50px;
+    }
+  }
+
+  .hero {
+
+    &__container {
+      gap: 20px;
+      padding-top: 200px;
+    }
+
+    &__banner {
+      height: 33px;
+      padding: 0 14px;
+      font-size: 14px;
+    }
+
+    &__title {
+      font-size: 28px;
+
+      &-line {
+        gap: 6px;
+      }
+    }
+
+    &__subtitle {
+      font-size: 15px;
+    }
+
+    &__info-list {
+      gap: 8px;
+
+      &__absolute-text {
+        bottom: calc(100% + 10px);
+        left: 8vw;
+
+        & > span {
+          font-size: 14px;
+        }
+
+        & > img {
+          width: 64px;
+          height: auto;
+        }
+      }
+    }
+
+    &__absolute-button {
+      bottom: 12px;
+      right: 12px;
+    }
+  }
+
+  .advantages {
+    gap: 24px;
+
+    &__head {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    &__title {
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+      column-gap: 6px;
+      font-size: 28px;
+      width: 64%;
+    }
+
+    &__description {
+      gap: 16px;
+      align-items: center;
+      width: 48%;
+      text-align: center;
+
+      & > span {
+        font-size: 15px;
+      }
+    }
+
+    &__container {
+      display: none;
+    }
+  }
+
+  .how-work {
+    gap: 24px;
+
+    &__head {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    &__title {
+      column-gap: 6px;
+      font-size: 28px;
+      width: 60%;
+      justify-content: center;
+    }
+
+    &__description {
+      gap: 20px;
+      width: 60%;
+      text-align: center;
+
+      & > span {
+        font-size: 15px;
+      }
+    }
+
+    &__container {
+      gap: 12px;
+    }
+  }
+
+  .quality {
+
+    &__head {
+      gap: 8px;
+    }
+
+    &__title {
+      column-gap: 8px;
+      font-size: 36px;
+      padding-bottom: 10px;
+    }
+
+    &__subtitle {
+      font-size: 18px;
+      padding-bottom: 20px;
+    }
+
+    &__container {
+      gap: 16px;
+      margin-top: 30px;
+    }
+  }
+
+  .tariffs {
+    &__head {
+      gap: 8px;
+    }
+
+    &__title {
+      column-gap: 8px;
+      font-size: 36px;
+    }
+
+    &__table {
+      margin-top: 30px;
+    }
+
+    &__table-head {
+      font-size: 15px;
+      line-height: 120%;
+      padding-bottom: 20px;
+
+      & > span {
+        &:nth-child(5) {
+          padding-left: 60px;
+        }
+      }
+    }
+
+    &__payments {
+      gap: 8px;
+      font-size: 15px;
+      margin-top: 20px;
+    }
+  }
+
+  .questions {
+    gap: 14px;
+
+    &__title {
+      font-size: 36px;
+    }
+
+    &__text {
+      font-size: 18px;
+      padding-top: 20px;
+    }
+  }
+
+  .effective {
+
+    &__container {
+      gap: 20px;
+      padding: 50px 0;
+    }
+
+    &__title {
+      font-size: 40px;
+
+      &-word {
+        flex: 0 0 calc(50% - 10px);
+      }
+    }
+
+    &__text {
+      font-size: 18px;
+    }
+  }
+}

@@ -1,3 +1,110 @@
 {
-  "buyNow": "Buy now"
+  "buyNow": "Buy now",
+  "hero": {
+    "try": "Try",
+    "best": "Best",
+    "service": "Proxy Service",
+    "title": {
+      "0": "Top quality",
+      "1": "for your efficient work"
+    },
+    "subtitle": {
+      "prefix": "Bypass blocks, stay anonymous, and",
+      "suffix": "work without limits with"
+    },
+    "discover": "Discover",
+    "forYou": "now"
+  },
+  "heroBlocks": {
+    "block1": "2,000,000+ IP addresses with over 95% cleanliness",
+    "block2": "High and stable speed, session retention up to 24 hours",
+    "block3": "Responsive and qualified 24/7 support"
+  },
+  "advantages": {
+    "title": ["Explore", "the advantages", "of our", "proxy service"],
+    "description": "We offer unique features rarely found on the market:",
+    "block1": {
+      "title": "Enhanced IP Filtering",
+      "text": "Thanks to hybrid proxy technology, ProxyPanda provides longer session duration, with IPs retained for up to 24 hours"
+    },
+    "block2": {
+      "title": "Sticky Sessions",
+      "text": "Thanks to hybrid proxy technology, ProxyPanda provides longer session duration, with IPs retained for up to 24 hours"
+    },
+    "block3": {
+      "title": "Experienced Support",
+      "text": "Thanks to hybrid proxy technology, ProxyPanda provides longer session duration, with IPs retained for up to 24 hours"
+    }
+  },
+  "howWork": {
+    "title": ["Here's", "how", "Panda", "Fraud", "Checker", "works"],
+    "description": "Traditionally, proxy providers competed to offer the largest network with the most IPs, sacrificing IP quality. At ProxyPanda, we do the opposite.",
+    "block1": {
+      "title": "The «Random IP Distribution' approach»",
+      "text": "When you connect to a proxy provided by another company, you are assigned an IP from a pool that has not been verified. In these pools, 75-99% of the IP addresses have been banned, blacklisted, or used for spam, making them risky for your business."
+    },
+    "block2": {
+      "title": "ProxyPanda's «Quality First' approach»",
+      "text": "ProxyPanda provides you with an IP for use ONLY after its quality has been verified using advanced algorithms. This guarantees protection from detection and ensures stable operation."
+    }
+  },
+  "quality": {
+    "title": ["High-quality", "performance", "in any", "direction!"],
+    "subtitle": "Gain a competitive edge in your industry",
+    "block": {
+      "title1": "Bounty & Airdrop",
+      "title2": "Web Scraping",
+      "title3": "Bonus Hunting",
+      "title4": "E-commerce",
+      "title5": "Digital Agencies",
+      "title6": "Anonymity",
+      "title7": "Traffic Arbitrage"
+    }
+  },
+  "tariffs": {
+    "title": ["Our", "Tariffs"],
+    "headings": {
+      "traffic": "Traffic",
+      "priority": "Priority",
+      "support": "support",
+      "transfer": "Traffic",
+      "traffics": "rollover",
+      "price": "Price per GB"
+    },
+    "free": "Free",
+    "anotherCost": "Upon request",
+    "button": "Contacts",
+    "payments": "We accept",
+    "contact": "Contact us"
+  },
+  "questions": {
+    "title": "Frequently asked questions",
+    "more": ["Still have questions? — ", "ask our operator"],
+    "list": [
+      {
+        "q": "What payment methods do you support?",
+        "a": "We support HTTP and SOCKS5 protocols"
+      },
+      {
+        "q": "What proxy protocols do you support?",
+        "a": "We support HTTP and SOCKS5 protocols"
+      },
+      {
+        "q": "How do you obtain proxy servers?",
+        "a": "We support HTTP and SOCKS5 protocols. We support HTTP and SOCKS5 protocols. We support HTTP and SOCKS5 protocols"
+      },
+      {
+        "q": "Which countries' proxies are available?",
+        "a": "We support HTTP and SOCKS5 protocols. We support HTTP and SOCKS5 protocols"
+      }
+    ]
+  },
+  "effective": {
+    "title": [
+      "Top quality",
+      ["for your" ,"efficient"],
+      "work"
+    ],
+    "text": "The most reliable proxy provider on the market"
+  }
 }

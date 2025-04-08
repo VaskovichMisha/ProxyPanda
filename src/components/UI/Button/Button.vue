@@ -71,4 +71,30 @@ export default {
     }
   }
 }
+
+@media (max-width: 992px) {
+  .button {
+    gap: 8px;
+    padding: 0 18px;
+    height: 44px;
+    font-size: 14px;
+    border-radius: 12px;
+
+    &.green-arrow {
+      height: 50px;
+      font-size: 14px;
+      padding: 0 20px;
+    }
+
+    &.icon {
+      width: 48px;
+      height: 48px;
+      padding: 12px;
+
+      & img {
+        width: 24px;
+      }
+    }
+  }
+}
 </style>

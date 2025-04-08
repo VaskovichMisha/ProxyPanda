@@ -31,3 +31,18 @@
     }
   }
 }
+
+@media (max-width: 992px) {
+  .hero-block {
+    flex-direction: row;
+    align-items: start;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 16px;
+    font-size: 15px;
+
+    & > img {
+      width: 20px;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.header-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: #F6F7F5;
+  border: 1px solid #FFFFFF;
+  backdrop-filter: blur(24px);
+  padding: 6px 8px 6px 16px;
+  border-radius: 16px;
+  margin-bottom: 12px;
+
+  @media (min-width: 992px) {
+    display: none;
+  }
+
+  &__block {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__burger-button {
+    position: relative;
+
+    & > div {
+      width: 18px;
+      height: 2px;
+      background: #000000;
+      border-radius: 10px;
+
+      &:nth-child(1) {
+        transform: translateY(8px);
+      }
+
+      &:nth-child(3) {
+        transform: translateY(-8px);
+      }
+    }
+  }
+
+  &__logo {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 100%;
+    color: #0E0E0E;
+  }
+}

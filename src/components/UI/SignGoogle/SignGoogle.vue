@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  
+
 }
 </script>
 
@@ -36,6 +36,18 @@ export default {
 
     & > img {
       width: 30px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .sign-google {
+    height: 40px;
+    padding: 6px 12px 6px 6px;
+    font-size: 14px;
+
+    & > img {
+      width: 28px;
     }
   }
 }

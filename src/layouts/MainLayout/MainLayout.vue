@@ -1,12 +1,13 @@
 <template>
   <div class="main">
+    <HeaderMobile @open-burger="isBurger = true" />
     <div class="main__hero">
       <div class="_container hero">
         <Header />
         <div class="hero__container">
           <div class="hero__banner">
-            <span>Лучший</span>
-            Прокси сервис
+            <span>{{ $t('main.hero.best') }}</span>
+            {{ $t('main.hero.service') }}
           </div>
           <h1 class="hero__title">
             <div v-for="(line, lineIndex) in title" :key="lineIndex" class="hero__title-line">
@@ -21,12 +22,12 @@
             </div>
           </h1>
           <div class="hero__subtitle">
-            Обходите блокировки, сохраняйте анонимность и <br> работайте без ограничений вместе с
+            {{ $t('main.hero.subtitle.prefix') }} <br> {{ $t('main.hero.subtitle.suffix') }}
             <span>ProxyPanda</span>
           </div>
           <div class="hero__buttons">
             <Button type="green-arrow">
-              Попробовать
+              {{ $t('main.hero.try') }}
               <img src="@/assets/svg/arrow-right.svg" alt="">
             </Button>
             <SignGoogle />
@@ -42,7 +43,7 @@
             }"
           />
           <div class="hero__info-list__absolute-text">
-            <span>Откройте <br> для себя:</span>
+            <span>{{ $t('main.hero.discover') }} <br> {{ $t('main.hero.forYou') }}:</span>
             <img src="@/assets/svg/arrow-round-main.svg" alt="">
           </div>
         </div>
@@ -71,13 +72,14 @@
             </span>
           </div>
           <div class="advantages__description">
-            <span>Мы предлагаем уникальные функции, почти не имеющие аналогов на рынке:</span>
+            <span>{{ $t('main.advantages.description') }}</span>
             <Button type="green-arrow">
-              Попробовать
+              {{ $t('main.hero.try') }}
               <img src="@/assets/svg/arrow-right.svg" alt="">
             </Button>
           </div>
         </div>
+
         <div class="advantages__container">
           <AdvantagesBlock
             v-for="block in advantagesBlock"
@@ -85,6 +87,21 @@
             :block="block"
           />
         </div>
+
+        <div class="advantages__carousel">
+          <Carousel v-bind="carouselConfig">
+            <Slide v-for="block in advantagesBlock" :key="block">
+              <AdvantagesBlock
+                :block="block"
+              />
+            </Slide>
+
+            <template #addons>
+              <Pagination />
+            </template>
+          </Carousel>
+        </div>
+
       </div>
     </div>
     <div class="main__how-work">
@@ -104,7 +121,7 @@
             </span>
           </div>
           <div class="how-work__description">
-            <span>Традиционно поставщики прокси-серверов конкурировали за предоставление самой большой сети с наибольшим количеством IP-адресов, жертвуя качеством своих IP-адресов. В Proxy Panda мы делаем наоборот.</span>
+            <span>{{ $t('main.howWork.description') }}</span>
           </div>
         </div>
         <div class="how-work__container">
@@ -133,10 +150,10 @@
             </span>
           </div>
           <span class="quality__subtitle">
-            Получите конкурентное преимущество в своей отрасли
+            {{ $t('main.quality.subtitle') }}
           </span>
           <Button type="green-arrow">
-            Попробовать
+            {{ $t('main.hero.try') }}
             <img src="@/assets/svg/arrow-right.svg" alt="">
           </Button>
         </div>
@@ -167,11 +184,11 @@
         </div>
         <div class="tariffs__table">
           <div class="tariffs__table-head">
-            <span>Трафик</span>
-            <span>Приоритетная <br> поддержка</span>
-            <span>Перенос <br> трафика</span>
+            <span>{{ $t('main.tariffs.headings.traffic') }}</span>
+            <span>{{ $t('main.tariffs.headings.priority') }} <br> {{ $t('main.tariffs.headings.support') }}</span>
+            <span>{{ $t('main.tariffs.headings.transfer') }} <br> {{ $t('main.tariffs.headings.traffics') }}</span>
             <span>Panda Fraud <br> Checker</span>
-            <span>Цена за ГБ</span>
+            <span>{{ $t('main.tariffs.headings.price') }}</span>
           </div>
           <div class="tariffs__table-list">
             <TariffsBlock
@@ -181,7 +198,7 @@
             />
           </div>
           <div class="tariffs__payments">
-            <span>Мы принимаем</span>
+            <span>{{ $t('main.tariffs.payments') }}</span>
             <div>
               <img src="@/assets/svg/visa-icon.svg" alt="">
               <img src="@/assets/svg/mastercard-icon.svg" alt="">
@@ -193,7 +210,7 @@
     </div>
     <div class="main__questions">
       <div class="_container questions">
-        <h2 class="questions__title">Часто задаваемые вопросы</h2>
+        <h2 class="questions__title">{{ $t('main.questions.title') }}</h2>
         <div class="questions__container">
           <div class="questions__list">
             <CustomDetails
@@ -203,7 +220,7 @@
             />
           </div>
           <div class="questions__text">
-            Остались еще вопросы? — <span>задай их нашему оператору</span>
+            {{ $t('main.questions.more.0') }} — <span>{{ $t('main.questions.more.1') }}</span>
           </div>
         </div>
       </div>
@@ -223,10 +240,10 @@
               :style="{ animation: visibleEffective ? `fadeInUp 0.5s ease forwards ${wordIndex * 0.1}s` : '' }"
             />
           </div>
-          <span class="effective__text">Самый надежный прокси провайдер на рынке</span>
+          <span class="effective__text">{{ $t('main.effective.text') }}</span>
           <div class="effective__buttons">
             <Button type="green-arrow">
-              Попробовать
+              {{ $t('main.hero.try') }}
               <img src="@/assets/svg/arrow-right.svg" alt="">
             </Button>
             <SignGoogle />
@@ -239,6 +256,10 @@
       <Footer />
     </div>
   </div>
+  <BurgerMenu
+    :isBurger="isBurger"
+    @close-burger="isBurger = false"
+  />
 </template>
 
 <script>
@@ -252,56 +273,114 @@ import QualityBlock from "@/components/QualityBlock/QualityBlock.vue";
 import TariffsBlock from "@/components/TariffsBlock/TariffsBlock.vue";
 import CustomDetails from "@/components/UI/CustomDetails/CustomDetails.vue"
 import Footer from "@/components/Footer/Footer.vue";
+import HeaderMobile from "@/components/HeaderMobile/HeaderMobile.vue";
+import BurgerMenu from "@/components/BurgerMenu/BurgerMenu.vue";
+import 'vue3-carousel/carousel.css'
+import { Carousel, Slide, Pagination } from 'vue3-carousel'
 
 export default {
   data() {
     return {
-      heroBlocks: [
+      isBurger: false,
+      delay: 0.1,
+      visibleAdvantages: false,
+      visibleHowWork: false,
+      visibleQuality: false,
+      visibleTariffs: false,
+      visibleEffective: false,
+      carouselConfig: {
+        itemsToShow: 1.2,
+        wrapAround: true,
+        gap: 8,
+        snapAlign: 'start',
+        breakpointMode: 'carousel',
+        breakpoints: {
+          576: {
+            itemsToShow: 2.5,
+          },
+          400: {
+            itemsToShow: 1.8,
+          },
+        }
+      }
+    }
+  },
+  computed: {
+    title() {
+      return [this.$t('main.hero.title.0'), this.$t('main.hero.title.1')]
+    },
+    titleAdvantages() {
+      return [this.$t('main.advantages.title.0'), this.$t('main.advantages.title.1'), this.$t('main.advantages.title.2'), this.$t('main.advantages.title.3')]
+    },
+    titleHowWork() {
+      return [this.$t('main.howWork.title.0'), this.$t('main.howWork.title.1'), this.$t('main.howWork.title.2'), this.$t('main.howWork.title.3'), this.$t('main.howWork.title.4'), this.$t('main.howWork.title.5')]
+    },
+    titleQuality() {
+      return [this.$t('main.quality.title.0'), this.$t('main.quality.title.1'), this.$t('main.quality.title.2'), this.$t('main.quality.title.3')]
+    },
+    titleTariffs() {
+      return [this.$t('main.tariffs.title.0'), this.$t('main.tariffs.title.1')]
+    },
+    titleEffective() {
+      return [
+        this.$t('main.effective.title.0'),
+        `${this.$t('main.effective.title.1.0')} <span class="effective__title-word--highlight">${this.$t('main.effective.title.1.1')}</span>`,
+        this.$t('main.effective.title.2')
+      ]
+    },
+    heroBlocks() {
+      return [
         {
-          text: '2 000 000 + IP адресов с чистотой выше 95%',
+          text: this.$t('main.heroBlocks.block1'),
           icon: new URL('@/assets/svg/lock-icon.svg', import.meta.url).href,
         },
         {
-          text: 'Высокую и стабильную скорость, сохранение сессии до 24 часов',
+          text: this.$t('main.heroBlocks.block2'),
           icon: new URL('@/assets/svg/convertshape-icon.svg', import.meta.url).href,
         },
         {
-          text: 'Оперативную и квалифицированную поддержку 24/7',
+          text: this.$t('main.heroBlocks.block3'),
           icon: new URL('@/assets/svg/user-tick-icon.svg', import.meta.url).href,
         },
-      ],
-      advantagesBlock: [
+      ]
+    },
+    advantagesBlock() {
+      return [
         {
-          title: 'Улучшеная IP-фильтрация',
-          text: 'Благодаря технологии гибридного прокси ProxyPanda обеспечивает более длительное время сеанса, а IP-адреса сохраняются до 24 часов',
+          title: this.$t('main.advantages.block1.title'),
+          text: this.$t('main.advantages.block1.text'),
           img: new URL('@/assets/image/advantages-one.png', import.meta.url).href,
         },
         {
-          title: 'Sticky сессии',
-          text: 'Благодаря технологии гибридного прокси ProxyPanda обеспечивает более длительное время сеанса, а IP-адреса сохраняются до 24 часов',
+          title: this.$t('main.advantages.block2.title'),
+          text: this.$t('main.advantages.block2.text'),
           img: new URL('@/assets/image/advantages-two.png', import.meta.url).href,
         },
         {
-          title: 'Опытный саппорт',
-          text: 'Благодаря технологии гибридного прокси ProxyPanda обеспечивает более длительное время сеанса, а IP-адреса сохраняются до 24 часов',
+          title: this.$t('main.advantages.block3.title'),
+          text: this.$t('main.advantages.block3.text'),
           img: new URL('@/assets/image/advantages-three.png', import.meta.url).href,
         },
-      ],
-      howWorkBlock: [
+      ]
+    },
+    howWorkBlock() {
+      return [
         {
-          title: 'Улучшеная IP-фильтрация',
-          text: 'Когда вы подключаетесь к прокси, предоставленному другой компанией, вам назначается IP из пула, который не был проверен. В этих пулах от 75 до 99% IP-адресов были забанены, занесены в черный список или использовались для спама, что делает их рискованными для вашего бизнеса.',
+          title: this.$t('main.howWork.block1.title'),
+          text: this.$t('main.howWork.block1.text'),
           img: new URL('@/assets/image/how-work-two.png', import.meta.url).href,
         },
         {
-          title: 'Sticky сессии',
-          text: 'ProxyPandа предоставляет вам IP в пользование ТОЛЬКО после проверки его качества с помощью передового алгоритма. Это гарантирует вам безопасность от обнаружения и стабильность работы.',
+          title: this.$t('main.howWork.block2.title'),
+          text: this.$t('main.howWork.block2.text'),
           img: new URL('@/assets/image/how-work-one.png', import.meta.url).href,
         },
-      ],
-      qualityBlock: [
+      ]
+    },
+    qualityBlock() {
+      return [
         {
-          title: 'Bounty & Airdrop',
+          title: this.$t('main.quality.block.title1'),
           img: new URL('@/assets/svg/quality-one.svg', import.meta.url).href,
           images: [
             new URL('@/assets/svg/quality-1.svg', import.meta.url).href,
@@ -310,7 +389,7 @@ export default {
           ]
         },
         {
-          title: 'Bounty & Airdrop',
+          title: this.$t('main.quality.block.title2'),
           img: new URL('@/assets/svg/quality-two.png', import.meta.url).href,
           images: [
             new URL('@/assets/svg/quality-4.svg', import.meta.url).href,
@@ -319,7 +398,7 @@ export default {
           ]
         },
         {
-          title: 'Bounty & Airdrop',
+          title: this.$t('main.quality.block.title3'),
           img: new URL('@/assets/svg/quality-one.svg', import.meta.url).href,
           images: [
             new URL('@/assets/svg/quality-1.svg', import.meta.url).href,
@@ -328,7 +407,7 @@ export default {
           ]
         },
         {
-          title: 'Bounty & Airdrop',
+          title: this.$t('main.quality.block.title4'),
           img: new URL('@/assets/svg/quality-one.svg', import.meta.url).href,
           images: [
             new URL('@/assets/svg/quality-1.svg', import.meta.url).href,
@@ -337,7 +416,7 @@ export default {
           ]
         },
         {
-          title: 'Улучшеная IP-фильтрация',
+          title: this.$t('main.quality.block.title5'),
           img: new URL('@/assets/svg/quality-one.svg', import.meta.url).href,
           images: [
             new URL('@/assets/svg/quality-1.svg', import.meta.url).href,
@@ -346,7 +425,7 @@ export default {
           ]
         },
         {
-          title: 'Улучшеная IP-фильтрация',
+          title: this.$t('main.quality.block.title6'),
           img: new URL('@/assets/svg/quality-one.svg', import.meta.url).href,
           images: [
             new URL('@/assets/svg/quality-1.svg', import.meta.url).href,
@@ -355,7 +434,7 @@ export default {
           ]
         },
         {
-          title: 'Улучшеная IP-фильтрация',
+          title: this.$t('main.quality.block.title7'),
           img: new URL('@/assets/svg/quality-one.svg', import.meta.url).href,
           images: [
             new URL('@/assets/svg/quality-1.svg', import.meta.url).href,
@@ -363,38 +442,26 @@ export default {
             new URL('@/assets/svg/quality-3.svg', import.meta.url).href
           ]
         },
-      ],
-      tariffsList: [
-        { startTraffic: 5, endTraffic: 9, support: false, transfer: true, checker: 'Бесплатно', startCost: '6.00', endCost: '3.3' },
-        { startTraffic: 10, endTraffic: 18, support: false, transfer: true, checker: 'Бесплатно', startCost: '5.60', endCost: '3.11' },
-        { startTraffic: 10, endTraffic: 45, support: false, transfer: true, checker: 'Бесплатно', startCost: '5.40', endCost: '3' },
-        { startTraffic: 10, endTraffic: 90, support: false, transfer: true, checker: 'Бесплатно', startCost: '4.80', endCost: '3' },
-        { startTraffic: 10, endTraffic: 160, support: true, transfer: true, checker: 'Бесплатно', startCost: '4.45', endCost: '2.67' },
-        { startTraffic: 10, endTraffic: 450, support: true, transfer: true, checker: 'Бесплатно', startCost: '4.00', endCost: '2.47' },
-        { startTraffic: 10, endTraffic: 1000, support: true, transfer: true, checker: 'Бесплатно', anotherCost: 'По запросу', button: 'Контакты'},
-      ],
-      detailsList: [
-        { title: 'Какие у вас есть способы оплаты?', description: 'Мы поддерживаем протоколы HTTP и SOCKS5 Мы поддерживаем протоколы HTTP и SOCKS5' },
-        { title: 'Какие прокси протоколы вы поддерживаете?', description: 'Мы поддерживаем протоколы HTTP и SOCKS5' },
-        { title: 'Как вы получаете прокси-серверы?', description: 'Мы поддерживаем протоколы HTTP и SOCKS5 Мы поддерживаем протоколы HTTP и SOCKS5 Мы поддерживаем протоколы HTTP и SOCKS5' },
-        { title: 'Прокси каких стран есть у вас в наличии?', description: 'Мы поддерживаем протоколы HTTP и SOCKS5 Мы поддерживаем протоколы HTTP и SOCKS5' },
-      ],
-      delay: 0.1,
-      title: ['Высочайшее качество', 'для вашей эффективной работы'],
-      titleAdvantages: ['Оцените', 'преимущества', 'нашего', 'прокси-сервиса'],
-      titleHowWork: ['Вот', 'как', 'работает', 'Panda', 'Fraud', 'Checker'],
-      titleQuality: ['Качественная', 'работа', 'в любых', 'направлениях!'],
-      titleTariffs: ['Наши', 'тарифы'],
-      titleEffective: [
-        'Высочайшее качество',
-        'для вашей <span class="effective__title-word--highlight">эффективной</span>',
-        'работы'
-      ],
-      visibleAdvantages: false,
-      visibleHowWork: false,
-      visibleQuality: false,
-      visibleTariffs: false,
-      visibleEffective: false,
+      ]
+    },
+    tariffsList() {
+      return [
+        { startTraffic: 5, endTraffic: 9, support: false, transfer: true, checker: this.$t('main.tariffs.free'), startCost: '6.00', endCost: '3.3' },
+        { startTraffic: 10, endTraffic: 18, support: false, transfer: true, checker: this.$t('main.tariffs.free'), startCost: '5.60', endCost: '3.11' },
+        { startTraffic: 10, endTraffic: 45, support: false, transfer: true, checker: this.$t('main.tariffs.free'), startCost: '5.40', endCost: '3' },
+        { startTraffic: 10, endTraffic: 90, support: false, transfer: true, checker: this.$t('main.tariffs.free'), startCost: '4.80', endCost: '3' },
+        { startTraffic: 10, endTraffic: 160, support: true, transfer: true, checker: this.$t('main.tariffs.free'), startCost: '4.45', endCost: '2.67' },
+        { startTraffic: 10, endTraffic: 450, support: true, transfer: true, checker: this.$t('main.tariffs.free'), startCost: '4.00', endCost: '2.47' },
+        { startTraffic: 10, endTraffic: 1000, support: true, transfer: true, checker: this.$t('main.tariffs.free'), anotherCost: this.$t('main.tariffs.anotherCost'), button: this.$t('main.tariffs.button')},
+      ]
+    },
+    detailsList() {
+      return [
+        { title: this.$t('main.questions.list.0.q'), description: this.$t('main.questions.list.0.a') },
+        { title: this.$t('main.questions.list.1.q'), description: this.$t('main.questions.list.1.a') },
+        { title: this.$t('main.questions.list.2.q'), description: this.$t('main.questions.list.2.a') },
+        { title: this.$t('main.questions.list.3.q'), description: this.$t('main.questions.list.3.a') },
+      ]
     }
   },
   methods: {
@@ -439,6 +506,8 @@ export default {
     this.observeIntersection()
   },
   components: {
+    BurgerMenu,
+    HeaderMobile,
     Footer,
     CustomDetails,
     TariffsBlock,
@@ -449,6 +518,9 @@ export default {
     SignGoogle,
     Button,
     Header,
+    Carousel,
+    Slide,
+    Pagination,
   }
 }
 </script>

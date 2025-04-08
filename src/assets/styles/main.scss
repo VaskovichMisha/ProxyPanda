@@ -120,3 +120,26 @@ button {
   font-weight: normal;
   src: local('Stampatello Faceto'), url('../fonts/Stampatello Faceto.woff') format('woff');
 }
+
+.carousel__pagination {
+  bottom: -18px;
+  gap: 4px;
+}
+
+.carousel__pagination-button {
+  background-color: #4A595F;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 12px;
+  height: 6px;
+  opacity: 0.4;
+}
+
+.carousel__pagination-button--active {
+  background-color: #4A595F;
+  opacity: 1;
+}
