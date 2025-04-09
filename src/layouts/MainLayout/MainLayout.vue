@@ -219,7 +219,7 @@
             />
           </div>
           <Button @click="toggleShow">
-            {{ showAll ? $t('main.showMore') : $t('main.showLess') }}
+            {{ showAll ? $t('main.showLess') : $t('main.showMore') }}
           </Button>
           <div class="tariffs__payments">
             <span>{{ $t('main.tariffs.payments') }}</span>
@@ -474,12 +474,12 @@ export default {
     },
     tariffsList() {
       return [
-        { startTraffic: 5, endTraffic: 9, support: false, transfer: true, checker: this.$t('main.tariffs.free'), startCost: '6.00', endCost: '3.3' },
-        { startTraffic: 10, endTraffic: 18, support: false, transfer: true, checker: this.$t('main.tariffs.free'), startCost: '5.60', endCost: '3.11' },
-        { startTraffic: 10, endTraffic: 45, support: false, transfer: true, checker: this.$t('main.tariffs.free'), startCost: '5.40', endCost: '3' },
-        { startTraffic: 10, endTraffic: 90, support: false, transfer: true, checker: this.$t('main.tariffs.free'), startCost: '4.80', endCost: '3' },
-        { startTraffic: 10, endTraffic: 160, support: true, transfer: true, checker: this.$t('main.tariffs.free'), startCost: '4.45', endCost: '2.67' },
-        { startTraffic: 10, endTraffic: 450, support: true, transfer: true, checker: this.$t('main.tariffs.free'), startCost: '4.00', endCost: '2.47' },
+        { startTraffic: 5, endTraffic: 9, support: false, transfer: true, checker: this.$t('main.tariffs.free'), startCost: '6,00', endCost: '3,3' },
+        { startTraffic: 10, endTraffic: 18, support: false, transfer: true, checker: this.$t('main.tariffs.free'), startCost: '5,60', endCost: '3,11' },
+        { startTraffic: 10, endTraffic: 45, support: false, transfer: true, checker: this.$t('main.tariffs.free'), startCost: '5,40', endCost: '3' },
+        { startTraffic: 10, endTraffic: 90, support: false, transfer: true, checker: this.$t('main.tariffs.free'), startCost: '4,80', endCost: '3' },
+        { startTraffic: 10, endTraffic: 160, support: true, transfer: true, checker: this.$t('main.tariffs.free'), startCost: '4,45', endCost: '2,67' },
+        { startTraffic: 10, endTraffic: 450, support: true, transfer: true, checker: this.$t('main.tariffs.free'), startCost: '4,00', endCost: '2,47' },
         { startTraffic: 10, endTraffic: 1000, support: true, transfer: true, checker: this.$t('main.tariffs.free'), anotherCost: this.$t('main.tariffs.anotherCost'), button: this.$t('main.tariffs.button')},
       ]
     },

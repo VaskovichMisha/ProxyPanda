@@ -56,7 +56,7 @@
       </div>
     </div>
     <div class="footer__under">
-      <span>© ProxyPanda 2024-2025, {{ $t('main.allRights') }}</span>
+      <span>© ProxyPanda 2024-2025, <span>{{ $t('main.allRights') }}</span></span>
       <RouterLink to="#">{{ $t('main.privacy') }}</RouterLink>
     </div>
   </footer>

@@ -25,10 +25,19 @@
 
     & > img:nth-child(1) {
       transform: translateX(16px);
+      position: relative;
+      z-index: 3;
     }
 
     & > img:nth-child(2) {
       transform: translateX(8px);
+      position: relative;
+      z-index: 2;
+    }
+
+    & > img:nth-child(3) {
+      position: relative;
+      z-index: 1;
     }
   }
 
@@ -110,7 +119,7 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 740px) {
   .quality-block:nth-child(1),
   .quality-block:nth-child(2),
   .quality-block:nth-child(3),

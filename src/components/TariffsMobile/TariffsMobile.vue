@@ -23,7 +23,7 @@
       <div class="tariffs-mobile__block">
         <img v-if="!block.transfer" src="@/assets/svg/cross-icon.svg" alt="">
         <img v-else src="@/assets/svg/check-icon.svg" alt="">
-        <span>{{ $t('main.tariffs.headings.transfer') }}{{ $t('main.tariffs.headings.traffics') }}</span>
+        <span>{{ $t('main.tariffs.headings.transfer') }} {{ $t('main.tariffs.headings.traffics') }}</span>
       </div>
       <div class="tariffs-mobile__block">
         <img src="@/assets/svg/check-icon.svg" alt="">
@@ -32,7 +32,7 @@
       <div class="tariffs-mobile__block">
         <img v-if="!block.support" src="@/assets/svg/cross-icon.svg" alt="">
         <img v-else src="@/assets/svg/check-icon.svg" alt="">
-        <span>{{ $t('main.tariffs.headings.priority') }}{{ $t('main.tariffs.headings.support') }}</span>
+        <span>{{ $t('main.tariffs.headings.priority') }} {{ $t('main.tariffs.headings.support') }}</span>
       </div>
     </div>
   </div>
@@ -55,5 +55,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "tariffsMobile";
+@use "tariffsMobile";
 </style>
