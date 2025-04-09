@@ -40,9 +40,16 @@
   }
 
   &__logo {
-    font-weight: 500;
-    font-size: 22px;
-    line-height: 100%;
-    color: #0E0E0E;
+    width: 152px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-mobile {
+    gap: 12px;
+
+    &__logo {
+      width: 116px;
+    }
   }
 }

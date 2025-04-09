@@ -134,7 +134,6 @@
   &__subtitle {
     font-weight: 400;
     font-size: 20px;
-    line-height: 120%;
     text-align: center;
     color: #4A595F;
     opacity: 0;
@@ -183,6 +182,10 @@
         font-size: 20px;
         line-height: 120%;
       }
+    }
+
+    &--mobile {
+      display: none;
     }
   }
 
@@ -244,6 +247,10 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+  }
+
+  &__carousel {
+    display: none;
   }
 }
 
@@ -401,6 +408,10 @@
     display: flex;
     flex-direction: column;
     margin-top: 36px;
+
+    & > button {
+      display: none !important;
+    }
   }
 
   &__table-head {
@@ -434,6 +445,10 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+
+    &--mobile {
+      display: none;
+    }
   }
 
   &__payments {
@@ -538,6 +553,14 @@
     top: 0;
     left: 0;
     opacity: 0.1;
+  }
+
+  &__gradient {
+    width: 630px;
+    position: absolute;
+    bottom: -30%;
+    right: 14%;
+    z-index: 1;
   }
 
   &__text {
@@ -776,6 +799,14 @@
     &__text {
       font-size: 18px;
     }
+
+    &__gradient {
+      width: 530px;
+      position: absolute;
+      z-index: 1;
+      bottom: -30%;
+      right: 5%;
+    }
   }
 }
 
@@ -800,24 +831,44 @@
 
     &__advantages {
       margin-bottom: 60px;
+
+      & ._container {
+        padding: 0;
+      }
     }
 
     &__how-work {
       margin-bottom: 60px;
+
+      & ._container {
+        padding: 0;
+      }
     }
 
     &__quality {
-      padding: 40px 0 50px;
+      padding: 32px 0 0;
       border-radius: 24px;
       margin-bottom: 60px;
+
+      & ._container {
+        padding: 8px;
+      }
     }
 
     &__tariffs {
       margin-bottom: 60px;
+
+      & ._container {
+        padding: 0;
+      }
     }
 
     &__questions {
       margin-bottom: 50px;
+
+      & ._container {
+        padding: 0;
+      }
     }
 
     &__effective {
@@ -908,6 +959,10 @@
     &__container {
       display: none;
     }
+
+    &__carousel {
+      display: block;
+    }
   }
 
   .how-work {
@@ -943,83 +998,111 @@
   }
 
   .quality {
+    padding: 8px;
 
     &__head {
-      gap: 8px;
+      gap: 12px;
     }
 
     &__title {
-      column-gap: 8px;
-      font-size: 36px;
-      padding-bottom: 10px;
+      display: flex;
+      column-gap: 6px;
+      font-size: 28px;
+      padding-bottom: 0;
+      width: 50%;
     }
 
     &__subtitle {
-      font-size: 18px;
-      padding-bottom: 20px;
+      font-size: 15px;
+      padding-bottom: 0;
+      width: 50%;
+      text-align: center;
     }
 
     &__container {
-      gap: 16px;
-      margin-top: 30px;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    &__bg {
+      width: 200%;
     }
   }
 
   .tariffs {
     &__head {
-      gap: 8px;
+      gap: 6px;
     }
 
     &__title {
-      column-gap: 8px;
-      font-size: 36px;
+      column-gap: 6px;
+      font-size: 28px;
     }
 
     &__table {
-      margin-top: 30px;
-    }
+      margin-top: 24px;
+      align-items: center;
 
-    &__table-head {
-      font-size: 15px;
-      line-height: 120%;
-      padding-bottom: 20px;
-
-      & > span {
-        &:nth-child(5) {
-          padding-left: 60px;
-        }
+      & > button {
+        display: flex !important;
+        position: relative;
+        z-index: 8;
       }
     }
 
+    &__table-list {
+      display: none;
+
+      &--mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        padding-bottom: 12px;
+      }
+    }
+
+    &__table-head {
+      display: none;
+    }
+
     &__payments {
-      gap: 8px;
-      font-size: 15px;
-      margin-top: 20px;
+      display: none;
+    }
+
+    &__gradient {
+      width: calc(100% + 32px);
+      height: 280px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 88.31%);
+      position: absolute;
+      z-index: 5;
+      bottom: 0;
+      left: -16px;
     }
   }
 
   .questions {
-    gap: 14px;
+    gap: 4px;
 
     &__title {
-      font-size: 36px;
+      font-size: 28px;
     }
 
     &__text {
-      font-size: 18px;
-      padding-top: 20px;
+      font-size: 15px;
+      padding-top: 16px;
     }
   }
 
   .effective {
 
     &__container {
-      gap: 20px;
-      padding: 50px 0;
+      gap: 12px;
+      padding: 40px 0 56px;
     }
 
     &__title {
-      font-size: 40px;
+      font-size: 28px;
 
       &-word {
         flex: 0 0 calc(50% - 10px);
@@ -1027,7 +1110,284 @@
     }
 
     &__text {
-      font-size: 18px;
+      font-size: 15px;
+    }
+
+    &__gradient {
+      width: auto;
+      bottom: 10%;
+      right: 2%;
+    }
+  }
+}
+
+
+//************************
+//************************
+//************************
+
+@media (max-width: 576px) {
+  .main {
+    padding: 8px;
+
+    &__bg {
+      width: 500%;
+    }
+
+    &__hero {
+      height: 500px;
+      padding: 16px 0;
+      margin-bottom: 42px;
+    }
+
+    &__advantages {
+      margin-bottom: 50px;
+
+      & ._container {
+        padding: 8px;
+      }
+    }
+
+    &__how-work {
+      margin-bottom: 50px;
+
+      & ._container {
+        padding: 8px;
+      }
+    }
+
+    &__quality {
+      padding: 32px 0 0;
+      margin-bottom: 60px;
+
+      & ._container {
+        padding: 4px;
+      }
+    }
+
+    &__tariffs {
+      margin-bottom: 60px;
+
+      & ._container {
+        padding: 8px;
+      }
+    }
+
+    &__questions {
+      margin-bottom: 50px;
+
+      & ._container {
+        padding: 8px;
+      }
+    }
+
+    &__effective {
+      border-radius: 24px;
+      margin-bottom: 50px;
+    }
+  }
+
+  .hero {
+    align-items: center;
+    justify-content: center;
+
+    &__title {
+      &-line {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0 6px;
+      }
+    }
+
+    &__container {
+      gap: 20px;
+      padding-top: 0;
+    }
+
+    &__info-list {
+      display: none;
+
+      &__absolute-text {
+        bottom: calc(100% - 12px);
+        left: 24vw;
+        z-index: 2;
+
+        & > span {
+          font-size: 14px;
+        }
+
+        & > img {
+          width: 72px;
+          height: auto;
+        }
+      }
+
+      &--mobile {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+      }
+    }
+
+    &__absolute-button {
+      bottom: 12px;
+      right: 12px;
+    }
+  }
+
+  .advantages {
+    gap: 24px;
+
+    &__head {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    &__title {
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+      column-gap: 6px;
+      font-size: 28px;
+      width: 100%;
+    }
+
+    &__description {
+      gap: 16px;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+
+      & > span {
+        font-size: 15px;
+      }
+    }
+
+    &__container {
+      display: none;
+    }
+
+    &__carousel {
+      display: block;
+    }
+  }
+
+  .how-work {
+    gap: 24px;
+
+    &__head {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    &__title {
+      column-gap: 6px;
+      font-size: 28px;
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+    }
+
+    &__description {
+      gap: 20px;
+      width: 100%;
+      text-align: center;
+
+      & > span {
+        font-size: 15px;
+      }
+    }
+
+    &__container {
+      gap: 12px;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .quality {
+
+    &__title {
+      width: 100%;
+    }
+
+    &__subtitle {
+      width: 100%;
+    }
+
+    &__container {
+      margin-top: 20px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__bg {
+      width: 200%;
+    }
+  }
+
+  .tariffs {
+    &__head {
+      gap: 6px;
+    }
+
+    &__title {
+      column-gap: 6px;
+      font-size: 28px;
+    }
+
+    &__table {
+      margin-top: 24px;
+      align-items: center;
+
+      & > button {
+        position: relative;
+        z-index: 8;
+      }
+    }
+  }
+
+  .questions {
+    gap: 4px;
+    grid-template-columns: 1fr;
+
+    &__title {
+      font-size: 28px;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    &__text {
+      font-size: 15px;
+      padding-top: 16px;
+    }
+  }
+
+  .effective {
+
+    &__container {
+      gap: 12px;
+      padding: 40px 0 56px;
+    }
+
+    &__title {
+      font-size: 28px;
+
+      &-word {
+        flex: 0 0 calc(50% - 10px);
+      }
+    }
+
+    &__text {
+      font-size: 15px;
+    }
+
+    &__gradient {
+      width: auto;
+      bottom: 10%;
+      right: -20%;
     }
   }
 }

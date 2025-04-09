@@ -17,8 +17,8 @@
   },
   "heroBlocks": {
     "block1": "2,000,000+ IP addresses with over 95% cleanliness",
-    "block2": "High and stable speed, session retention up to 24 hours",
-    "block3": "Responsive and qualified 24/7 support"
+    "block2": ["High and stable", "speed, session retention up to 24 hours"],
+    "block3": ["Responsive", "and qualified 24/7 support"]
   },
   "advantages": {
     "title": ["Explore", "the advantages", "of our", "proxy service"],
@@ -106,5 +106,31 @@
       "work"
     ],
     "text": "The most reliable proxy provider on the market"
-  }
+  },
+  "slogan": "The highest quality proxy solution on the market",
+  "socials": "We are on social media",
+  "proxy": "Proxy",
+  "using": "Usage",
+  "resources": "Resources",
+  "price": "Pricing",
+  "login": "Log in",
+  "mobileProxies": "Mobile Proxies",
+  "residentialProxies": "Residential Proxies",
+  "proxyChecker": "Proxy Checker",
+  "partners": "Affiliate Program",
+  "support": "Support",
+  "integrations": "Integrations",
+  "info": "Information",
+  "terms": "Terms of Service",
+  "feedback": "Reviews and Suggestions",
+  "privacy": "Privacy Policy",
+  "allRights": "All rights reserved",
+  "browsers": "Browsers",
+  "mobileDevices": "Mobile Devices",
+  "apps": "Applications",
+  "knowledgeBase": "Knowledge Base",
+  "gb": "GB",
+  "buy": "Buy",
+  "showMore": "Show more",
+  "showLess": "Show less"
 }

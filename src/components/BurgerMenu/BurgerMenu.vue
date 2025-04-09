@@ -7,39 +7,42 @@
             <div></div>
             <div></div>
           </button>
-          <span class="burger-menu__title">
-        ProxyPanda
-      </span>
+          <img class="burger-menu__logo" src="@/assets/svg/logo.svg" alt="logo">
         </div>
         <LanguageSwitcher />
       </div>
       <div class="burger-menu__nav">
         <Dropdown
-          buttonText='Прокси'
+          :buttonText="$t('main.proxy')"
           :items="proxy"
         />
         <Dropdown
-          buttonText='Использование'
+          :buttonText="$t('main.using')"
           :items="using"
         />
         <router-link :to="'/'">
-          Цена
+          {{ $t('main.price') }}
         </router-link>
         <Dropdown
-          buttonText='Ресурсы'
+          :buttonText="$t('main.resources')"
           :items="resources"
         />
       </div>
     </div>
     <div class="burger-menu__buttons">
       <Button type="lightgreen">
-        Войти
+        {{ $t('main.login') }}
       </Button>
       <Button>
         {{ $t('main.buyNow') }}
       </Button>
     </div>
   </div>
+  <div
+    class="burger-menu__overlay"
+    :class="{ 'overlay-open': isBurger }"
+    @click="closeBurger"
+  ></div>
 </template>
 
 <script>
@@ -54,23 +57,28 @@ export default {
       default: false
     }
   },
-  data() {
-    return {
-      proxy: [
-        { label: 'Мобильные прокси', href: '/' },
-        { label: 'Резидентские прокси', href: '/' },
-        { label: 'Прокси-чекер', href: '/' },
-      ],
-      using: [
-        { label: 'Мобильные прокси', href: '/' },
-        { label: 'Резидентские прокси', href: '/' },
-        { label: 'Прокси-чекер', href: '/' },
-      ],
-      resources: [
-        { label: 'Мобильные прокси', href: '/' },
-        { label: 'Резидентские прокси', href: '/' },
-        { label: 'Прокси-чекер', href: '/' },
-      ],
+  computed: {
+    proxy() {
+      return [
+        { label: this.$t('main.mobileProxies'), href: '/' },
+        { label: this.$t('main.residentialProxies'), href: '/' },
+        { label: this.$t('main.proxyChecker'), href: '/' },
+      ]
+    },
+    using() {
+      return [
+        { label: this.$t('main.browsers'), href: '/' },
+        { label: this.$t('main.mobileDevices'), href: '/' },
+        { label: this.$t('main.apps'), href: '/' },
+      ]
+    },
+    resources() {
+      return [
+        { label: this.$t('main.knowledgeBase'), href: '/' },
+        { label: this.$t('main.partners'), href: '/' },
+        { label: this.$t('main.support'), href: '/' },
+        { label: this.$t('main.integrations'), href: '/' },
+      ]
     }
   },
   methods: {
@@ -86,6 +94,7 @@ export default {
 }
 </script>
 
+
 <style lang="scss" scoped>
-@import "burgerMenu";
+@use "burgerMenu";
 </style>

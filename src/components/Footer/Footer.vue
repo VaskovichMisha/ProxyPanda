@@ -2,10 +2,14 @@
   <footer class="_container footer">
     <div class="footer__container">
       <div class="footer__main">
-        <span class="footer__title">ProxyPanda</span>
-        <span class="footer__subtitle">ProxyPanda. Самое качественное прокси-решение на рынке</span>
+        <div class="footer__head">
+          <img src="@/assets/svg/logo.svg" alt="logo">
+          <span class="footer__subtitle">
+            ProxyPanda. {{ $t('main.slogan') }}
+          </span>
+        </div>
         <div class="footer__social">
-          <span>Мы в соцсетях</span>
+          <span>{{ $t('main.socials') }}</span>
           <div class="footer__buttons">
             <Button type="icon">
               <img src="@/assets/svg/telegram-icon.svg" alt="">
@@ -18,42 +22,42 @@
       </div>
       <div class="footer__blocks">
         <div class="footer__block">
-          <span class="footer__block-title">Прокси</span>
+          <span class="footer__block-title">{{ $t('main.proxy') }}</span>
           <div class="footer__block-list">
-            <RouterLink to="#">Мобильные прокси</RouterLink>
-            <RouterLink to="#">Резидентские прокси</RouterLink>
-            <RouterLink to="#">Прокси-чекер</RouterLink>
+            <RouterLink to="#">{{ $t('main.mobileProxies') }}</RouterLink>
+            <RouterLink to="#">{{ $t('main.residentialProxies') }}</RouterLink>
+            <RouterLink to="#">{{ $t('main.proxyChecker') }}</RouterLink>
           </div>
         </div>
         <div class="footer__block">
-          <span class="footer__block-title">Использование</span>
+          <span class="footer__block-title">{{ $t('main.using') }}</span>
           <div class="footer__block-list">
-            <RouterLink to="#">Браузеры</RouterLink>
-            <RouterLink to="#">Мобильные устройства</RouterLink>
-            <RouterLink to="#">Приложения</RouterLink>
+            <RouterLink to="#">{{ $t('main.browsers') }}</RouterLink>
+            <RouterLink to="#">{{ $t('main.mobileDevices') }}</RouterLink>
+            <RouterLink to="#">{{ $t('main.apps') }}</RouterLink>
           </div>
         </div>
         <div class="footer__block">
-          <span class="footer__block-title">Ресурсы</span>
+          <span class="footer__block-title">{{ $t('main.resources') }}</span>
           <div class="footer__block-list">
-            <RouterLink to="#">База знаний</RouterLink>
-            <RouterLink to="#">Партнерская программа</RouterLink>
-            <RouterLink to="#">Саппорт</RouterLink>
-            <RouterLink to="#">Интеграции</RouterLink>
+            <RouterLink to="#">{{ $t('main.knowledgeBase') }}</RouterLink>
+            <RouterLink to="#">{{ $t('main.partners') }}</RouterLink>
+            <RouterLink to="#">{{ $t('main.support') }}</RouterLink>
+            <RouterLink to="#">{{ $t('main.integrations') }}</RouterLink>
           </div>
         </div>
         <div class="footer__block">
-          <span class="footer__block-title">Информация</span>
+          <span class="footer__block-title">{{ $t('main.info') }}</span>
           <div class="footer__block-list">
-            <RouterLink to="#">Условия обслуживания</RouterLink>
-            <RouterLink to="#">Отзывы и предложения</RouterLink>
+            <RouterLink to="#">{{ $t('main.terms') }}</RouterLink>
+            <RouterLink to="#">{{ $t('main.feedback') }}</RouterLink>
           </div>
         </div>
       </div>
     </div>
     <div class="footer__under">
-      <span>© ProxyPanda 2024-2025, Все права защищены</span>
-      <RouterLink to="#">Политика конфиденциальности</RouterLink>
+      <span>© ProxyPanda 2024-2025, {{ $t('main.allRights') }}</span>
+      <RouterLink to="#">{{ $t('main.privacy') }}</RouterLink>
     </div>
   </footer>
 </template>

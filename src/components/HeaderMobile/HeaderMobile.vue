@@ -6,7 +6,7 @@
         <div></div>
         <div></div>
       </button>
-      <span class="header-mobile__logo">ProxyPanda</span>
+      <img class="header-mobile__logo" src="@/assets/svg/logo.svg" alt="logo">
     </div>
     <Button>
       {{ $t('main.buyNow') }}
@@ -30,5 +30,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "headerMobile";
+@use "headerMobile";
 </style>

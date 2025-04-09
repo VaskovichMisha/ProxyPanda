@@ -1,5 +1,8 @@
 <template>
   <div class="how-work-block">
+    <span class="how-work-block__title how-work-block__title--mobile">
+      {{ block.title }}
+    </span>
     <img :src="block.img" alt="">
     <div class="how-work-block__content">
       <span class="how-work-block__title">

@@ -1,7 +1,7 @@
 <template>
   <div class="hero-block">
     <img :src="block?.icon" alt="">
-    <span>{{ block.text }}</span>
+    <span>{{ block.text[0] }} <br> {{ block.text[1] }}</span>
   </div>
 </template>
 

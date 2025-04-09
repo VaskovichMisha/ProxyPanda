@@ -1,29 +1,27 @@
 <template>
   <header class="header">
-    <div class="header__logo">
-      ProxyPanda
-    </div>
+    <img class="header__logo" src="@/assets/svg/logo.svg" alt="logo">
     <div class="header__nav">
       <Dropdown
-        buttonText='Прокси'
+        :buttonText="$t('main.proxy')"
         :items="proxy"
       />
       <Dropdown
-        buttonText='Использование'
+        :buttonText="$t('main.using')"
         :items="using"
       />
       <router-link :to="'/'">
-        Цена
+        {{ $t('main.price') }}
       </router-link>
       <Dropdown
-        buttonText='Ресурсы'
+        :buttonText="$t('main.resources')"
         :items="resources"
       />
     </div>
     <div class="header__buttons">
       <LanguageSwitcher />
       <Button type="lightgreen">
-        Войти
+        {{ $t('main.login') }}
       </Button>
       <Button>
         {{ $t('main.buyNow') }}
@@ -33,37 +31,49 @@
 </template>
 
 <script>
-import Dropdown from "@/components/UI/Dropdown/Dropdown.vue";
-import Button from "@/components/UI/Button/Button.vue";
 import LanguageSwitcher from "@/components/LanguageSwitcher/LanguageSwitcher.vue";
+import Button from "@/components/UI/Button/Button.vue";
+import Dropdown from "@/components/UI/Dropdown/Dropdown.vue";
 
 export default {
-  data() {
-    return {
-      proxy: [
-        { label: 'Мобильные прокси', href: '/' },
-        { label: 'Резидентские прокси', href: '/' },
-        { label: 'Прокси-чекер', href: '/' },
-      ],
-      using: [
-        { label: 'Мобильные прокси', href: '/' },
-        { label: 'Резидентские прокси', href: '/' },
-        { label: 'Прокси-чекер', href: '/' },
-      ],
-      resources: [
-        { label: 'Мобильные прокси', href: '/' },
-        { label: 'Резидентские прокси', href: '/' },
-        { label: 'Прокси-чекер', href: '/' },
-      ],
+  props: {
+    isBurger: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    proxy() {
+      return [
+        { label: this.$t('main.mobileProxies'), href: '/' },
+        { label: this.$t('main.residentialProxies'), href: '/' },
+        { label: this.$t('main.proxyChecker'), href: '/' },
+      ];
+    },
+    using() {
+      return [
+        { label: this.$t('main.browsers'), href: '/' },
+        { label: this.$t('main.mobileDevices'), href: '/' },
+        { label: this.$t('main.apps'), href: '/' },
+      ]
+    },
+    resources() {
+      return [
+        { label: this.$t('main.knowledgeBase'), href: '/' },
+        { label: this.$t('main.partners'), href: '/' },
+        { label: this.$t('main.support'), href: '/' },
+        { label: this.$t('main.integrations'), href: '/' },
+      ]
     }
   },
   components: {
-    LanguageSwitcher,
-    Button,
     Dropdown,
+    Button,
+    LanguageSwitcher,
   }
 }
 </script>
+
 
 <style lang="scss" scoped>
 @use "header";

@@ -98,7 +98,20 @@ export default {
 
   .custom-content {
     font-size: 16px;
-    padding-left: 32px;
+    padding-left: 38px;
+  }
+}
+
+@media (max-width: 992px) {
+  .custom-summary {
+    gap: 14px;
+    font-size: 15px;
+    padding: 16px 0;
+  }
+
+  .custom-content {
+    font-size: 15px;
+    padding-left: 38px;
   }
 }
 </style>

@@ -55,6 +55,20 @@
       </div>
       <img class="main__bg" src="@/assets/image/main-lines.png" alt="">
     </div>
+    <div class="hero__info-list hero__info-list--mobile">
+      <HeroBlock
+        v-for="(block, index) in heroBlocks"
+        :key="block"
+        :block="block"
+        :style="{
+              animation: `fadeInUp 0.5s ease forwards ${index * 0.3}s`
+            }"
+      />
+      <div class="hero__info-list__absolute-text">
+        <span>{{ $t('main.hero.discover') }} <br> {{ $t('main.hero.forYou') }}:</span>
+        <img src="@/assets/svg/arrow-round-main.svg" alt="">
+      </div>
+    </div>
     <div class="main__advantages">
       <div class="_container advantages">
         <div class="advantages__head">
@@ -197,6 +211,16 @@
               :block="block"
             />
           </div>
+          <div class="tariffs__table-list--mobile">
+            <TariffsMobile
+              v-for="block in (showAll ? tariffsList : tariffsList.slice(0, 3))"
+              :key="block"
+              :block="block"
+            />
+          </div>
+          <Button @click="toggleShow">
+            {{ showAll ? $t('main.showMore') : $t('main.showLess') }}
+          </Button>
           <div class="tariffs__payments">
             <span>{{ $t('main.tariffs.payments') }}</span>
             <div>
@@ -206,6 +230,7 @@
             </div>
           </div>
         </div>
+        <div v-if="!showAll" class="tariffs__gradient"></div>
       </div>
     </div>
     <div class="main__questions">
@@ -251,6 +276,7 @@
         </div>
       </div>
       <img class="effective__bg" src="@/assets/image/main-lines.png" alt="">
+      <img class="effective__gradient" src="@/assets/image/qulity-grad.png" alt="">
     </div>
     <div class="main__footer">
       <Footer />
@@ -277,10 +303,12 @@ import HeaderMobile from "@/components/HeaderMobile/HeaderMobile.vue";
 import BurgerMenu from "@/components/BurgerMenu/BurgerMenu.vue";
 import 'vue3-carousel/carousel.css'
 import { Carousel, Slide, Pagination } from 'vue3-carousel'
+import TariffsMobile from "@/components/TariffsMobile/TariffsMobile.vue";
 
 export default {
   data() {
     return {
+      showAll: false,
       isBurger: false,
       delay: 0.1,
       visibleAdvantages: false,
@@ -289,7 +317,7 @@ export default {
       visibleTariffs: false,
       visibleEffective: false,
       carouselConfig: {
-        itemsToShow: 1.2,
+        itemsToShow: 1.1,
         wrapAround: true,
         gap: 8,
         snapAlign: 'start',
@@ -313,7 +341,7 @@ export default {
       return [this.$t('main.advantages.title.0'), this.$t('main.advantages.title.1'), this.$t('main.advantages.title.2'), this.$t('main.advantages.title.3')]
     },
     titleHowWork() {
-      return [this.$t('main.howWork.title.0'), this.$t('main.howWork.title.1'), this.$t('main.howWork.title.2'), this.$t('main.howWork.title.3'), this.$t('main.howWork.title.4'), this.$t('main.howWork.title.5')]
+      return [this.$t('main.howWork.title.0'), this.$t('main.howWork.title.1'), this.$t('main.howWork.title.2'), this.$t('main.howWork.title.3')]
     },
     titleQuality() {
       return [this.$t('main.quality.title.0'), this.$t('main.quality.title.1'), this.$t('main.quality.title.2'), this.$t('main.quality.title.3')]
@@ -331,15 +359,15 @@ export default {
     heroBlocks() {
       return [
         {
-          text: this.$t('main.heroBlocks.block1'),
+          text: [this.$t('main.heroBlocks.block1')],
           icon: new URL('@/assets/svg/lock-icon.svg', import.meta.url).href,
         },
         {
-          text: this.$t('main.heroBlocks.block2'),
+          text: [this.$t('main.heroBlocks.block2.0'), this.$t('main.heroBlocks.block2.1')],
           icon: new URL('@/assets/svg/convertshape-icon.svg', import.meta.url).href,
         },
         {
-          text: this.$t('main.heroBlocks.block3'),
+          text: [this.$t('main.heroBlocks.block3.0'), this.$t('main.heroBlocks.block3.1')],
           icon: new URL('@/assets/svg/user-tick-icon.svg', import.meta.url).href,
         },
       ]
@@ -368,12 +396,12 @@ export default {
         {
           title: this.$t('main.howWork.block1.title'),
           text: this.$t('main.howWork.block1.text'),
-          img: new URL('@/assets/image/how-work-two.png', import.meta.url).href,
+          img: new URL('@/assets/image/how-work-one.png', import.meta.url).href,
         },
         {
           title: this.$t('main.howWork.block2.title'),
           text: this.$t('main.howWork.block2.text'),
-          img: new URL('@/assets/image/how-work-one.png', import.meta.url).href,
+          img: new URL('@/assets/image/how-work-two.png', import.meta.url).href,
         },
       ]
     },
@@ -399,47 +427,47 @@ export default {
         },
         {
           title: this.$t('main.quality.block.title3'),
-          img: new URL('@/assets/svg/quality-one.svg', import.meta.url).href,
+          img: new URL('@/assets/svg/quality-three.png', import.meta.url).href,
           images: [
-            new URL('@/assets/svg/quality-1.svg', import.meta.url).href,
-            new URL('@/assets/svg/quality-2.svg', import.meta.url).href,
-            new URL('@/assets/svg/quality-3.svg', import.meta.url).href
+            new URL('@/assets/svg/quality-7.svg', import.meta.url).href,
+            new URL('@/assets/svg/quality-8.svg', import.meta.url).href,
+            new URL('@/assets/svg/quality-9.svg', import.meta.url).href
           ]
         },
         {
           title: this.$t('main.quality.block.title4'),
-          img: new URL('@/assets/svg/quality-one.svg', import.meta.url).href,
+          img: new URL('@/assets/svg/quality-four.png', import.meta.url).href,
           images: [
-            new URL('@/assets/svg/quality-1.svg', import.meta.url).href,
-            new URL('@/assets/svg/quality-2.svg', import.meta.url).href,
-            new URL('@/assets/svg/quality-3.svg', import.meta.url).href
+            new URL('@/assets/svg/quality-10.svg', import.meta.url).href,
+            new URL('@/assets/svg/quality-11.svg', import.meta.url).href,
+            new URL('@/assets/svg/quality-12.svg', import.meta.url).href
           ]
         },
         {
           title: this.$t('main.quality.block.title5'),
-          img: new URL('@/assets/svg/quality-one.svg', import.meta.url).href,
+          img: new URL('@/assets/svg/quality-five.png', import.meta.url).href,
           images: [
-            new URL('@/assets/svg/quality-1.svg', import.meta.url).href,
-            new URL('@/assets/svg/quality-2.svg', import.meta.url).href,
-            new URL('@/assets/svg/quality-3.svg', import.meta.url).href
+            new URL('@/assets/svg/quality-13.svg', import.meta.url).href,
+            new URL('@/assets/svg/quality-14.svg', import.meta.url).href,
+            new URL('@/assets/svg/quality-15.svg', import.meta.url).href
           ]
         },
         {
           title: this.$t('main.quality.block.title6'),
-          img: new URL('@/assets/svg/quality-one.svg', import.meta.url).href,
+          img: new URL('@/assets/svg/quality-six.png', import.meta.url).href,
           images: [
-            new URL('@/assets/svg/quality-1.svg', import.meta.url).href,
-            new URL('@/assets/svg/quality-2.svg', import.meta.url).href,
-            new URL('@/assets/svg/quality-3.svg', import.meta.url).href
+            new URL('@/assets/svg/quality-16.svg', import.meta.url).href,
+            new URL('@/assets/svg/quality-17.svg', import.meta.url).href,
+            new URL('@/assets/svg/quality-18.svg', import.meta.url).href
           ]
         },
         {
           title: this.$t('main.quality.block.title7'),
-          img: new URL('@/assets/svg/quality-one.svg', import.meta.url).href,
+          img: new URL('@/assets/svg/quality-seven.png', import.meta.url).href,
           images: [
-            new URL('@/assets/svg/quality-1.svg', import.meta.url).href,
-            new URL('@/assets/svg/quality-2.svg', import.meta.url).href,
-            new URL('@/assets/svg/quality-3.svg', import.meta.url).href
+            new URL('@/assets/svg/quality-19.svg', import.meta.url).href,
+            new URL('@/assets/svg/quality-20.svg', import.meta.url).href,
+            new URL('@/assets/svg/quality-21.svg', import.meta.url).href
           ]
         },
       ]
@@ -465,6 +493,9 @@ export default {
     }
   },
   methods: {
+    toggleShow()  {
+      this.showAll = !this.showAll
+    },
     getDelay(wordIndex) {
       return (wordIndex * this.delay).toFixed(2)
     },
@@ -506,6 +537,7 @@ export default {
     this.observeIntersection()
   },
   components: {
+    TariffsMobile,
     BurgerMenu,
     HeaderMobile,
     Footer,

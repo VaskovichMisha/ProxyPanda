@@ -30,11 +30,13 @@ export default {
   line-height: 120%;
   background: #C0F54D;
   border-radius: 12px;
+  transition: all 0.2s;
   white-space: nowrap;
   cursor: pointer;
 
-  &.lightgreen {
+  &:hover {
     background: #C0F54D99;
+    transition: all 0.2s;
   }
 
   &.green-arrow {
@@ -42,6 +44,16 @@ export default {
     gap: 8px;
     font-size: 18px;
     padding: 0 24px;
+    font-family: 'PP Neue Montreal', sans-serif;
+    font-weight: 500;
+
+    ::v-deep(img) {
+      transition: transform 0.2s ease;
+    }
+
+    &:hover ::v-deep(img) {
+      transform: translateX(6px);
+    }
   }
 
   &.icon {
@@ -76,9 +88,11 @@ export default {
   .button {
     gap: 8px;
     padding: 0 18px;
-    height: 44px;
+    height: 42px;
     font-size: 14px;
     border-radius: 12px;
+    font-family: 'PP Neue Montreal', sans-serif;
+    font-weight: 500;
 
     &.green-arrow {
       height: 50px;
@@ -90,6 +104,7 @@ export default {
       width: 48px;
       height: 48px;
       padding: 12px;
+      border-radius: 16px;
 
       & img {
         width: 24px;
